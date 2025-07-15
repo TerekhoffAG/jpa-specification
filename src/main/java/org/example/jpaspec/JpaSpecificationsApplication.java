@@ -1,4 +1,4 @@
-package org.example.jpa_specifications;
+package org.example.jpaspec;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

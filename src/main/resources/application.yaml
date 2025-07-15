@@ -1,0 +1,36 @@
+server:
+  port: 8081
+logging:
+  level:
+    root: INFO
+    org:
+      example: DEBUG
+      springframework: WARN
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+        orm:
+          jdbc:
+            bind: TRACE
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){white} [${spring.application.name:app}] %clr([%t]){blue} %clr(%level) %clr(%logger{38}){cyan} %clr(:){white} %m%n%ex"
+spring:
+  application:
+    name: jpa-spec
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/js_db
+    username: postgres
+    password: 123
+  liquibase:
+    change-log: classpath:db/changelog.xml
